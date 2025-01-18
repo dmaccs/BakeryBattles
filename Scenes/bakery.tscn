@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dsxf5hkewpt4w"]
+
+[ext_resource type="PackedScene" uid="uid://ijvxdeqkbacl" path="res://Scenes/bakery_stations.tscn" id="1_1bvnj"]
+
+[node name="Bakery" type="Node2D"]
+
+[node name="BakeryStations" parent="." instance=ExtResource("1_1bvnj")]
+position = Vector2(73, 307)

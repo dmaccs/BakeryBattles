@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://bxcd344w4f35u"]
+
+[ext_resource type="Texture2D" uid="uid://cugeekchrg7x7" path="res://Sprites/gingerbreadman.png" id="1_a36mo"]
+
+[node name="Unit" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1.19209e-07, -19)
+scale = Vector2(0.884615, 1)
+texture = ExtResource("1_a36mo")

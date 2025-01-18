@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://cee7wug1yxfoj"]
+
+[ext_resource type="Script" path="res://Scripts/ObjectData.cs" id="1_j7plv"]
+
+[resource]
+script = ExtResource("1_j7plv")
+ItemName = "Oven"
+Width = 2
+ItemType = "Baking"
+Description = "Oven Bakes 1 gingerbread man every 5 seconds"

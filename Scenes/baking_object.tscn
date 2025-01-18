@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dnj204xysowyf"]
+
+[ext_resource type="Script" path="res://Scripts/BakingObject.cs" id="1_kksjp"]
+[ext_resource type="Resource" uid="uid://2rk8tsjvpjhg" path="res://Resources/Oven.tres" id="2_kgitl"]
+
+[node name="BakingObject" type="Node2D"]
+script = ExtResource("1_kksjp")
+objectData = ExtResource("2_kgitl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+unique_name_in_owner = true

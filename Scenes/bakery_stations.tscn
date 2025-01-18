@@ -1,0 +1,54 @@
+[gd_scene load_steps=3 format=3 uid="uid://ijvxdeqkbacl"]
+
+[ext_resource type="Script" path="res://Scripts/BakeryStations.cs" id="1_8os5j"]
+[ext_resource type="Script" path="res://Scripts/Slot.cs" id="2_e7kae"]
+
+[node name="BakeryStations" type="Node2D"]
+position = Vector2(15, 15)
+script = ExtResource("1_8os5j")
+
+[node name="SlotBackGround" type="ColorRect" parent="."]
+offset_right = 500.0
+offset_bottom = 50.0
+color = Color(0.501961, 0.411765, 0.235294, 1)
+
+[node name="Slot1" type="Node2D" parent="." node_paths=PackedStringArray("bakingObject")]
+script = ExtResource("2_e7kae")
+bakingObject = NodePath("")
+
+[node name="Slot2" type="Node2D" parent="." node_paths=PackedStringArray("bakingObject")]
+position = Vector2(50, 0)
+script = ExtResource("2_e7kae")
+bakingObject = NodePath("")
+
+[node name="Slot3" type="Node2D" parent="."]
+position = Vector2(100, 0)
+script = ExtResource("2_e7kae")
+
+[node name="Slot4" type="Node2D" parent="."]
+position = Vector2(150, 0)
+script = ExtResource("2_e7kae")
+
+[node name="Slot5" type="Node2D" parent="."]
+position = Vector2(200, 0)
+script = ExtResource("2_e7kae")
+
+[node name="Slot6" type="Node2D" parent="."]
+position = Vector2(250, 0)
+script = ExtResource("2_e7kae")
+
+[node name="Slot7" type="Node2D" parent="."]
+position = Vector2(300, 0)
+script = ExtResource("2_e7kae")
+
+[node name="Slot8" type="Node2D" parent="."]
+position = Vector2(350, 0)
+script = ExtResource("2_e7kae")
+
+[node name="Slot9" type="Node2D" parent="."]
+position = Vector2(400, 0)
+script = ExtResource("2_e7kae")
+
+[node name="Slot10" type="Node2D" parent="."]
+position = Vector2(450, 0)
+script = ExtResource("2_e7kae")
