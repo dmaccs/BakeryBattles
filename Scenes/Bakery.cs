@@ -8,6 +8,10 @@ public partial class Bakery : Node2D
     BakeryStations PlayerStation;
     BakeryStations EnemyStation;
 
+    Fighter Player;
+
+    Fighter Opponent;
+
     ObjectData ovenResource;
 
     [Export]
@@ -19,6 +23,8 @@ public partial class Bakery : Node2D
         PlayerStation = GetNode<BakeryStations>("BakeryStations1");
         EnemyStation = GetNode<BakeryStations>("BakeryStations2");
         ovenResource = GD.Load<ObjectData>("res://Resources/Oven.tres");
+        Player = GetNode<Fighter>("Fighter1");
+        Opponent = GetNode<Fighter>("Fighter2");
     }
 
     public void _on_button_pressed()
@@ -56,6 +62,26 @@ public partial class Bakery : Node2D
 
     public void StartFight()
     {
-        // do something else
+        for(int i = 0; i < 10; i++){ //start player items
+            if(PlayerStation.slots[i].spaceUsed){
+                if(PlayerStation.slots[i].bakingObject != null){
+                    PlayerStation.slots[i].bakingObject.StartFight("bam!",Player);
+                    i+= PlayerStation.slots[i].bakingObject.objectData.Width - 1;
+                }
+            }
+        }
+        for(int i = 0; i < 10; i++){ //start player items
+            if(EnemyStation.slots[i].spaceUsed){
+                if(EnemyStation.slots[i].bakingObject != null){
+                    EnemyStation.slots[i].bakingObject.StartFight("bang!", Opponent);
+                    i+= EnemyStation.slots[i].bakingObject.objectData.Width - 1;
+                }
+            }
+        }
+
+        Player.StartFight(Opponent);
+        Opponent.StartFight(Player);        
+
+        
     }
 }
