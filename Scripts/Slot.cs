@@ -12,15 +12,17 @@ public partial class Slot : Node2D
             bakingObject.Position = Position;
         }
     }
-    public void AddBakingObject(BakingObject newBakingObject)
+    public bool AddBakingObject(BakingObject newBakingObject)
     {
         if (bakingObject == null)  // Only add if slot is empty
         {
             bakingObject = newBakingObject;
-            newBakingObject.Position = Position;  // Position it in the slot (optional adjustment)
-            AddChild(newBakingObject);  // Add the BakingObject as a child of this slot
+            //newBakingObject.Position = Position;  // Position it in the slot (optional adjustment)
+            // DON'T DO THIS CUZ IT RUNS MULTIPLE TIMES CURRENTLY AddChild(newBakingObject);  // Add the BakingObject as a child of this slot
             spaceUsed = true;
+            return true;
         }
+        return false;
     }
 
     public void RemoveBakingObject(){
@@ -29,6 +31,5 @@ public partial class Slot : Node2D
         }
         bakingObject = null;
         spaceUsed = false;
-        
     }
 }

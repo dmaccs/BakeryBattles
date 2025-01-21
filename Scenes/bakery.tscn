@@ -1,8 +1,39 @@
-[gd_scene load_steps=2 format=3 uid="uid://dsxf5hkewpt4w"]
+[gd_scene load_steps=5 format=3 uid="uid://dsxf5hkewpt4w"]
 
 [ext_resource type="PackedScene" uid="uid://ijvxdeqkbacl" path="res://Scenes/bakery_stations.tscn" id="1_1bvnj"]
+[ext_resource type="Script" path="res://Scenes/Bakery.cs" id="1_viy3a"]
+[ext_resource type="PackedScene" uid="uid://dnj204xysowyf" path="res://Scenes/baking_object.tscn" id="2_np32n"]
+[ext_resource type="PackedScene" uid="uid://bxcd344w4f35u" path="res://Scenes/Fighter.tscn" id="2_o7cl5"]
 
 [node name="Bakery" type="Node2D"]
+script = ExtResource("1_viy3a")
+TestOven = ExtResource("2_np32n")
 
-[node name="BakeryStations" parent="." instance=ExtResource("1_1bvnj")]
+[node name="BakeryStations1" parent="." instance=ExtResource("1_1bvnj")]
+unique_name_in_owner = true
 position = Vector2(73, 307)
+
+[node name="Button" type="Button" parent="."]
+unique_name_in_owner = true
+offset_left = 236.0
+offset_top = 126.0
+offset_right = 392.0
+offset_bottom = 198.0
+text = "Start!"
+
+[node name="Fighter1" parent="." instance=ExtResource("2_o7cl5")]
+unique_name_in_owner = true
+position = Vector2(158, 235)
+scale = Vector2(4, 4)
+
+[node name="Fighter2" parent="." instance=ExtResource("2_o7cl5")]
+unique_name_in_owner = true
+position = Vector2(473, 241)
+scale = Vector2(4, 4)
+
+[node name="BakeryStations2" parent="." instance=ExtResource("1_1bvnj")]
+unique_name_in_owner = true
+position = Vector2(576, 50)
+rotation = 3.14159
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

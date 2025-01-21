@@ -41,4 +41,36 @@ List<Slot> slots = new(10);
         }
     }
 
+    public void SetSlot(BakingObject setObject, int slot){
+        if(setObject == null){
+            return;
+        }
+        if(setObject.objectData.Width + slot - 1 > 9){
+            return;
+        }
+        if(slot > 9 || slot < 0){
+            return;
+        }
+        GD.Print("Why am i here");
+        bool success = true;
+        
+        for(int i = 0; i < setObject.objectData.Width; i++){
+            GD.Print("current i: " + i);
+            //GD.Print(setObject.objectData.Width);
+            success &= slots[slot + i].AddBakingObject(setObject);
+        }
+        if(!success){
+           for(int i = 0; i < setObject.objectData.Width; i++){
+                slots[slot + i].RemoveBakingObject();
+                //return false maybe;
+            }
+            return; 
+        }
+        slots[slot].AddChild(setObject); // this is a hack for getting the og thing to run
+        GD.Print("slot position = " + slots[slot].Position.ToString());
+        //setObject.Position = slots[slot].Position;
+        return;
+        
+    }
+
 }

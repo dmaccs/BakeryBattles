@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("1_5digq")
 ItemName = "Oven"
-Width = 3
+Width = 2
 Texture = ExtResource("1_qxcfe")
 ItemType = "Baking"
 Description = "Bakes gingerbread man once every 5 seconds"

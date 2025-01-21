@@ -12,14 +12,12 @@ offset_right = 500.0
 offset_bottom = 50.0
 color = Color(0.501961, 0.411765, 0.235294, 1)
 
-[node name="Slot1" type="Node2D" parent="." node_paths=PackedStringArray("bakingObject")]
+[node name="Slot1" type="Node2D" parent="."]
 script = ExtResource("2_e7kae")
-bakingObject = NodePath("")
 
-[node name="Slot2" type="Node2D" parent="." node_paths=PackedStringArray("bakingObject")]
+[node name="Slot2" type="Node2D" parent="."]
 position = Vector2(50, 0)
 script = ExtResource("2_e7kae")
-bakingObject = NodePath("")
 
 [node name="Slot3" type="Node2D" parent="."]
 position = Vector2(100, 0)
