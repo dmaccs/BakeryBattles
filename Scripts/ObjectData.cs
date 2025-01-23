@@ -1,5 +1,6 @@
 using Godot;
 
+namespace FoodFight;
 public partial class ObjectData : Resource
 {
     [Export]

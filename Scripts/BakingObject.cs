@@ -1,5 +1,6 @@
 using Godot;
 
+namespace FoodFight;
 public partial class BakingObject : Node2D
 {
     [Export]
@@ -47,6 +48,10 @@ public partial class BakingObject : Node2D
     public virtual void DoFunction(){
         GD.Print(WarCry);
         Player.attackDamage += 3;
+    }
+
+    public void StopFight(){
+        timer.Stop();
     }
 
     

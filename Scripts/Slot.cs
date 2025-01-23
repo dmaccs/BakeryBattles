@@ -1,5 +1,7 @@
 using Godot;
 
+namespace FoodFight;
+
 public partial class Slot : Node2D
 {
     [Export]
@@ -20,6 +22,7 @@ public partial class Slot : Node2D
             //newBakingObject.Position = Position;  // Position it in the slot (optional adjustment)
             // DON'T DO THIS CUZ IT RUNS MULTIPLE TIMES CURRENTLY AddChild(newBakingObject);  // Add the BakingObject as a child of this slot
             spaceUsed = true;
+            bakingObject.ZIndex = 1;
             return true;
         }
         return false;

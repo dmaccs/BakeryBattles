@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://pjqwbhk7lo22"]
+
+[ext_resource type="Script" path="res://Scenes/TitleScreen.cs" id="1_7pcvh"]
+[ext_resource type="Texture2D" uid="uid://4eiran572sw4" path="res://Sprites/TitleScreen.png" id="1_pc3kx"]
+
+[node name="Menu" type="Node2D"]
+script = ExtResource("1_7pcvh")
+
+[node name="TitleScreen" type="Sprite2D" parent="."]
+position = Vector2(320, 181)
+texture = ExtResource("1_pc3kx")
+
+[node name="Play" type="Button" parent="."]
+unique_name_in_owner = true
+modulate = Color(0, 0, 0, 1)
+offset_left = 188.0
+offset_top = 290.0
+offset_right = 275.0
+offset_bottom = 327.0
+text = "Play"
+
+[node name="Settings" type="Button" parent="."]
+unique_name_in_owner = true
+modulate = Color(0, 0, 0, 1)
+offset_left = 365.0
+offset_top = 290.0
+offset_right = 451.0
+offset_bottom = 327.0
+text = "Settings"
+
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Settings" to="." method="_on_settings_pressed"]

@@ -1,6 +1,7 @@
 using Godot;
 using System.Collections.Generic;
 
+namespace FoodFight;
 public partial class BakeryStations : Node2D
 {
 

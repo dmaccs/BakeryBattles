@@ -1,6 +1,6 @@
 using Godot;
-using System;
 
+namespace FoodFight;
 public partial class Fighter : Node2D
 {
     private Timer timer;
@@ -35,6 +35,15 @@ public partial class Fighter : Node2D
 
     public void GetHit(int damage){
         health.Value -= damage;
+        if(health.Value <= 0){
+            health.Value = 0;
+            GameState.Instance.FightOver(this);
+            
+        }
+    }
+
+    public void StopFight(){
+        timer.Stop();
     }
     
 }

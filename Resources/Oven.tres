@@ -1,12 +1,12 @@
 [gd_resource type="Resource" load_steps=3 format=3 uid="uid://2rk8tsjvpjhg"]
 
 [ext_resource type="Script" path="res://Scripts/ObjectData.cs" id="1_5digq"]
-[ext_resource type="Texture2D" uid="uid://cs8oodba1ssa3" path="res://Sprites/icon.svg" id="1_qxcfe"]
+[ext_resource type="Texture2D" uid="uid://br5jmbn7i72r7" path="res://Sprites/Oven.png" id="1_aqw0o"]
 
 [resource]
 script = ExtResource("1_5digq")
 ItemName = "Oven"
 Width = 2
-Texture = ExtResource("1_qxcfe")
+Texture = ExtResource("1_aqw0o")
 ItemType = "Baking"
 Description = "Bakes gingerbread man once every 5 seconds"
