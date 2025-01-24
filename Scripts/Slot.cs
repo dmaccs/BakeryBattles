@@ -5,7 +5,7 @@ namespace FoodFight;
 public partial class Slot : Node2D
 {
     [Export]
-    public BakingObject bakingObject;
+    public KitchenObject bakingObject;
     public bool spaceUsed = false;
     
     public override void _Ready(){
@@ -14,7 +14,7 @@ public partial class Slot : Node2D
             bakingObject.Position = Position;
         }
     }
-    public bool AddBakingObject(BakingObject newBakingObject)
+    public bool AddBakingObject(KitchenObject newBakingObject)
     {
         if (bakingObject == null)  // Only add if slot is empty
         {

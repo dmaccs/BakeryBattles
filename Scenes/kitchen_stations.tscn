@@ -1,12 +1,12 @@
 [gd_scene load_steps=4 format=3 uid="uid://ijvxdeqkbacl"]
 
-[ext_resource type="Script" path="res://Scripts/BakeryStations.cs" id="1_8os5j"]
+[ext_resource type="Script" path="res://Scripts/KitchenStations.cs" id="1_lh750"]
 [ext_resource type="Script" path="res://Scripts/Slot.cs" id="2_e7kae"]
 [ext_resource type="Texture2D" uid="uid://dg0f2oi1n3pev" path="res://Sprites/Slot.png" id="3_lolum"]
 
-[node name="BakeryStations" type="Node2D"]
+[node name="KitchenStations" type="Node2D"]
 position = Vector2(15, 15)
-script = ExtResource("1_8os5j")
+script = ExtResource("1_lh750")
 
 [node name="Slot1" type="Node2D" parent="."]
 script = ExtResource("2_e7kae")

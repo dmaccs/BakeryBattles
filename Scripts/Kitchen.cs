@@ -2,16 +2,12 @@ using Godot;
 
 namespace FoodFight;
 
-public partial class Bakery : Node2D
+public partial class Kitchen : Node2D
 {
 
     Button startButton;
-    BakeryStations PlayerStation;
-    BakeryStations EnemyStation;
-
-    Fighter Player;
-
-    Fighter Opponent;
+    KitchenStations PlayerStation;
+    Enemy Opponent;
 
     ObjectData ovenResource;
 
@@ -21,11 +17,9 @@ public partial class Bakery : Node2D
     public override void _Ready()
     {
         startButton = GetNode<Button>("Button");
-        PlayerStation = GetNode<BakeryStations>("BakeryStations1");
-        EnemyStation = GetNode<BakeryStations>("BakeryStations2");
+        PlayerStation = GetNode<KitchenStations>("KitchenStations1");
         ovenResource = GD.Load<ObjectData>("res://Resources/Oven.tres");
-        Player = GetNode<Fighter>("Player");
-        Opponent = GetNode<Fighter>("Fighter2");
+        Opponent = GetNode<Enemy>("FoodCritic");
     }
 
     public void _on_button_pressed()
@@ -37,22 +31,18 @@ public partial class Bakery : Node2D
 
     public void InitializeFight()
     {
-        BakingObject bakingObject1 = MakeNewOven();
-        BakingObject bakingObject2 = MakeNewOven();
-        BakingObject bakingObject3 = MakeNewOven();
-        BakingObject bakingObject4 = MakeNewOven();
-        BakingObject bakingObject5 = MakeNewOven();
+        KitchenObject bakingObject1 = MakeNewOven();
+        KitchenObject bakingObject2 = MakeNewOven();
+        KitchenObject bakingObject3 = MakeNewOven();
 
         PlayerStation.SetSlot(bakingObject1, 0);
         PlayerStation.SetSlot(bakingObject2, 4);
-        PlayerStation.SetSlot(bakingObject3, 6);  
-        EnemyStation.SetSlot(bakingObject4,1);
-        EnemyStation.SetSlot(bakingObject5,8);      
+        PlayerStation.SetSlot(bakingObject3, 6);    
         // do something
     }
 
-    private BakingObject MakeNewOven(){
-        BakingObject theOven = TestOven.Instantiate<BakingObject>();
+    private KitchenObject MakeNewOven(){
+        KitchenObject theOven = TestOven.Instantiate<KitchenObject>();
         theOven.InitObject(ovenResource);
         return theOven;
     }
@@ -62,22 +52,13 @@ public partial class Bakery : Node2D
         for(int i = 0; i < 10; i++){ //start player items
             if(PlayerStation.slots[i].spaceUsed){
                 if(PlayerStation.slots[i].bakingObject != null){
-                    PlayerStation.slots[i].bakingObject.StartFight("bam!",Player);
+                    PlayerStation.slots[i].bakingObject.StartFight("bam!",Opponent);
                     i+= PlayerStation.slots[i].bakingObject.objectData.Width - 1;
                 }
             }
         }
-        for(int i = 0; i < 10; i++){ //start player items
-            if(EnemyStation.slots[i].spaceUsed){
-                if(EnemyStation.slots[i].bakingObject != null){
-                    EnemyStation.slots[i].bakingObject.StartFight("bang!", Opponent);
-                    i+= EnemyStation.slots[i].bakingObject.objectData.Width - 1;
-                }
-            }
-        }
 
-        Player.StartFight(Opponent);
-        Opponent.StartFight(Player);        
+        Opponent.StartFight();        
 
         
     }
@@ -91,16 +72,7 @@ public partial class Bakery : Node2D
                 }
             }
         }
-        for(int i = 0; i < 10; i++){ //start player items
-            if(EnemyStation.slots[i].spaceUsed){
-                if(EnemyStation.slots[i].bakingObject != null){
-                    EnemyStation.slots[i].bakingObject.StopFight();
-                    i+= EnemyStation.slots[i].bakingObject.objectData.Width - 1;
-                }
-            }
-        }
 
-        Player.StopFight();
         Opponent.StopFight();
         if(wonFight){
             WinFight();

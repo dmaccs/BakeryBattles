@@ -1,7 +1,7 @@
 using Godot;
 
 namespace FoodFight;
-public partial class BakingObject : Node2D
+public partial class KitchenObject : Node2D
 {
     [Export]
     public ObjectData objectData;
@@ -11,7 +11,7 @@ public partial class BakingObject : Node2D
 
     private string WarCry;
 
-    private Fighter Player;
+    private Enemy Customer;
 
     public override void _Ready()
     {
@@ -26,10 +26,10 @@ public partial class BakingObject : Node2D
         }
     }
 
-    public void StartFight(string warCry, Fighter fighter){
+    public void StartFight(string warCry, Enemy customer){
         timer = new Timer();
         AddChild(timer);
-        Player = fighter;
+        Customer = customer;
         WarCry = warCry;
 
         // Set the timer's wait time (X seconds)
@@ -47,7 +47,7 @@ public partial class BakingObject : Node2D
 
     public virtual void DoFunction(){
         GD.Print(WarCry);
-        Player.attackDamage += 3;
+        Customer.Eat(3);
     }
 
     public void StopFight(){
@@ -62,13 +62,13 @@ public partial class BakingObject : Node2D
     }
     Sprite2D sprite;
 
-    public BakingObject(ObjectData newObjectData)
+    public KitchenObject(ObjectData newObjectData)
     {
         objectData = newObjectData;
         InitializeBakingObject();
     }
 
-    public BakingObject(){
+    public KitchenObject(){
         
     }
 

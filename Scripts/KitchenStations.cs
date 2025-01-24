@@ -2,7 +2,7 @@ using Godot;
 using System.Collections.Generic;
 
 namespace FoodFight;
-public partial class BakeryStations : Node2D
+public partial class KitchenStations : Node2D
 {
 
 public List<Slot> slots = new(10);
@@ -15,7 +15,7 @@ public List<Slot> slots = new(10);
         }
         for(int i = 0; i < slots.Count; i++){
             if(slots[i].spaceUsed){
-                BakingObject currBakingObject = slots[i].bakingObject;
+                KitchenObject currBakingObject = slots[i].bakingObject;
                 int objectWidth = currBakingObject.objectData.Width;
                 if(objectWidth > 3){
                     GD.Print("Width is too large");
@@ -42,7 +42,7 @@ public List<Slot> slots = new(10);
         }
     }
 
-    public void SetSlot(BakingObject setObject, int slot){
+    public void SetSlot(KitchenObject setObject, int slot){
         if(setObject == null){
             return;
         }

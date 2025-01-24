@@ -4,10 +4,8 @@ namespace FoodFight;
 
 public partial class GameState : Node
 {
-    
-    Fighter Player;
-    Bakery PlayerBakery;
-    Fighter Opponent;
+    Kitchen PlayerKitchen;
+    Enemy Customer;
 
     public static GameState Instance { get; private set; }
 
@@ -24,8 +22,8 @@ public partial class GameState : Node
         CurrentScene = root.GetChild(-1); 
     }
 
-    public void FightOver(Fighter loser){
-        PlayerBakery.StopFight(loser != Player);
+    public void FightOver(bool didWin){
+        PlayerKitchen.StopFight(didWin);
     }
 
     public void StartGame(int CharacterChoice = 0){ //placeholder, eventually 0,1,2 etc will choose which char you use
@@ -36,7 +34,7 @@ public partial class GameState : Node
 
     private void LoadEncounter(int encoutnerNum){
         CurrentScene.Free();
-        PackedScene nextScene = GD.Load<PackedScene>("res://Scenes/bakery.tscn");
+        PackedScene nextScene = GD.Load<PackedScene>("res://Scenes/kitchen.tscn");
         CurrentScene = nextScene.Instantiate();
         GetTree().Root.AddChild(CurrentScene);
         GetTree().CurrentScene = CurrentScene;
@@ -46,9 +44,8 @@ public partial class GameState : Node
     }
 
     private void InitializeGame(){ // sets up references for game
-        Player = GetTree().Root.GetNode<Fighter>("Bakery/Player");
-        PlayerBakery = GetTree().Root.GetNode<Bakery>("Bakery"); 
-        Opponent = GetTree().Root.GetNode<Fighter>("Bakery/Fighter2");
+        Customer = GetTree().Root.GetNode<Enemy>("Kitchen/FoodCritic");
+        PlayerKitchen = GetTree().Root.GetNode<Kitchen>("Kitchen"); 
     }
 
     public void GameOver(){
