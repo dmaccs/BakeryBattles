@@ -1,0 +1,57 @@
+[gd_scene load_steps=3 format=3 uid="uid://dl3fei6duluyw"]
+
+[ext_resource type="Texture2D" uid="uid://cd2jan0tuafsf" path="res://Sprites/HeartBackground.png" id="1_v8vhr"]
+[ext_resource type="Texture2D" uid="uid://bcbpi8wnnki4b" path="res://Sprites/heart.png" id="2_ckgca"]
+
+[node name="GameUi" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.156
+anchor_bottom = 0.05
+offset_left = 9.0
+offset_top = 9.0
+offset_right = 9.16
+offset_bottom = 9.0
+texture = ExtResource("1_v8vhr")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme_override_constants/separation = 3
+alignment = 1
+
+[node name="Health1" type="TextureRect" parent="TextureRect/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_ckgca")
+stretch_mode = 2
+
+[node name="Health2" type="TextureRect" parent="TextureRect/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_ckgca")
+stretch_mode = 2
+
+[node name="Health3" type="TextureRect" parent="TextureRect/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_ckgca")
+stretch_mode = 2
+
+[node name="Health4" type="TextureRect" parent="TextureRect/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_ckgca")
+stretch_mode = 2
+
+[node name="Health5" type="TextureRect" parent="TextureRect/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_ckgca")
+stretch_mode = 2

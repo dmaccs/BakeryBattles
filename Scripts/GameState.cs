@@ -17,11 +17,16 @@ public partial class GameState : Node
 
     int firstObjectID = 0;
 
+    Control UI;
+
     public override void _Ready()
     {
         Instance = this;
         Viewport root = GetTree().Root;    
         CurrentScene = root.GetChild(-1); 
+        UI = GetNode<Control>("/root/GameUi");
+
+        GD.Print("Game State Ready");
     }
 
     public void FightOver(bool didWin){

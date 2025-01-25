@@ -30,5 +30,6 @@ theme = SubResource("Theme_dnn8c")
 [node name="DescriptionLabel" type="Label" parent="Panel"]
 unique_name_in_owner = true
 visible = false
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
