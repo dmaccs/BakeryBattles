@@ -6,7 +6,7 @@ public partial class Enemy : Node2D
     private Timer timer;
     private float timeInterval = 3f;
 
-    public int hungerRate = 5;
+    public int hungerRate = 20;
     TextureProgressBar fullness;
     public override void _Ready()
     {

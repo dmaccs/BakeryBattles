@@ -70,6 +70,7 @@ public List<Slot> slots = new(10);
         slots[slot].AddChild(setObject); // this is a hack for getting the og thing to run
         //GD.Print("slot position = " + slots[slot].Position.ToString());
         //setObject.Position = slots[slot].Position;
+        setObject.Position = new Vector2(setObject.Position.X + 1, setObject.Position.Y);
         return;
         
     }

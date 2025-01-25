@@ -5,7 +5,6 @@
 [ext_resource type="Texture2D" uid="uid://dg0f2oi1n3pev" path="res://Sprites/Slot.png" id="3_lolum"]
 
 [node name="KitchenStations" type="Node2D"]
-position = Vector2(15, 15)
 script = ExtResource("1_lh750")
 
 [node name="Slot1" type="Node2D" parent="."]

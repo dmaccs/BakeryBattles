@@ -1,6 +1,5 @@
-[gd_scene load_steps=6 format=3 uid="uid://dsxf5hkewpt4w"]
+[gd_scene load_steps=5 format=3 uid="uid://dsxf5hkewpt4w"]
 
-[ext_resource type="PackedScene" uid="uid://dnj204xysowyf" path="res://Scenes/kitchen_object.tscn" id="2_oj31l"]
 [ext_resource type="PackedScene" uid="uid://ijvxdeqkbacl" path="res://Scenes/kitchen_stations.tscn" id="3_m3su0"]
 [ext_resource type="Script" path="res://Scripts/Kitchen.cs" id="4_7fqir"]
 [ext_resource type="PackedScene" uid="uid://bxcd344w4f35u" path="res://Scenes/Enemy.tscn" id="4_bl1jx"]
@@ -8,19 +7,10 @@
 
 [node name="Kitchen" type="Node2D"]
 script = ExtResource("4_7fqir")
-TestOven = ExtResource("2_oj31l")
 
 [node name="KitchenStations1" parent="." instance=ExtResource("3_m3su0")]
 unique_name_in_owner = true
 position = Vector2(73, 296)
-
-[node name="Button" type="Button" parent="KitchenStations1"]
-modulate = Color(0, 0, 0, 1)
-offset_left = 189.0
-offset_top = 290.0
-offset_right = 276.0
-offset_bottom = 327.0
-text = "Play"
 
 [node name="Button" type="Button" parent="."]
 unique_name_in_owner = true

@@ -6,45 +6,46 @@ public partial class Kitchen : Node2D
 {
 
     Button startButton;
-    KitchenStations PlayerStation;
+    public KitchenStations PlayerStation;
     Enemy Opponent;
 
-    ObjectData ovenResource;
+    //ObjectData ovenResource;
 
-    [Export]
-    public PackedScene TestOven {get; set; }
+    //[Export]
+    //public PackedScene TestOven {get; set; }
 
     public override void _Ready()
     {
         startButton = GetNode<Button>("Button");
         PlayerStation = GetNode<KitchenStations>("KitchenStations1");
-        ovenResource = GD.Load<ObjectData>("res://Resources/Oven.tres");
+        //ovenResource = GD.Load<ObjectData>("res://Resources/Oven.tres");
         Opponent = GetNode<Enemy>("FoodCritic");
+        GameState.Instance.Customer = Opponent;
     }
 
     public void _on_button_pressed()
     {
         startButton.Visible = false;
-        InitializeFight();
+        //InitializeFight();
         StartFight();
     }
 
     public void InitializeFight()
     {
-        KitchenObject bakingObject1 = MakeNewOven();
-        KitchenObject bakingObject2 = MakeNewOven();
-        KitchenObject bakingObject3 = MakeNewOven();
+        // KitchenObject bakingObject1 = MakeNewOven();
+        // KitchenObject bakingObject2 = MakeNewOven();
+        // KitchenObject bakingObject3 = MakeNewOven();
 
-        PlayerStation.SetSlot(bakingObject1, 0);
-        PlayerStation.SetSlot(bakingObject2, 4);
-        PlayerStation.SetSlot(bakingObject3, 6);    
+        // PlayerStation.SetSlot(bakingObject1, 0);
+        // PlayerStation.SetSlot(bakingObject2, 4); //addchild currently being ran in here (bad)
+        // PlayerStation.SetSlot(bakingObject3, 6); 
         // do something
     }
 
     private KitchenObject MakeNewOven(){
-        KitchenObject theOven = TestOven.Instantiate<KitchenObject>();
-        theOven.InitObject(ovenResource);
-        return theOven;
+        KitchenObject oven = KitchenObject.CreateInstance(1);
+        //AddChild(oven);
+        return oven;
     }
 
     public void StartFight()

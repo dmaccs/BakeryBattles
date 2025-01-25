@@ -13,9 +13,12 @@ public partial class ObjectData : Resource
     public string ItemType { get; set; }
     [Export]
     public string Description { get; set; }
+    [Export]
+    public int ID { get; set; }
 
-    public ObjectData(string itemName, int width, Texture2D texture, string itemType, string description)
+    public ObjectData(int id, string itemName, int width, Texture2D texture, string itemType, string description)
     {
+        ID = id;
         ItemName = itemName;
         Width = width;
         Texture = texture;
@@ -25,5 +28,10 @@ public partial class ObjectData : Resource
 
     public ObjectData(){
         
+    }
+
+    public virtual void Use()
+    {
+        GD.Print("Using " + ItemName);
     }
 }

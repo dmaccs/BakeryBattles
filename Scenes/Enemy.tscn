@@ -24,6 +24,6 @@ layout_mode = 0
 offset_left = -65.1341
 offset_right = 68.8659
 offset_bottom = 38.0
-value = 100.0
+value = 30.0
 texture_under = ExtResource("2_opi7x")
 texture_progress = ExtResource("3_ja2ty")
