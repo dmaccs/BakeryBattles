@@ -75,4 +75,19 @@ public List<Slot> slots = new(10);
         
     }
 
+    public void AddObject(KitchenObject item){
+        if(item == null){
+            return;
+        }
+        for(int i = 0; i < slots.Count; i++){
+            if(!slots[i].spaceUsed){
+                if(item.objectData.Width + i - 1 > 9){
+                    return;
+                }
+                SetSlot(item,i);
+                return;
+            }
+        }
+    }
+
 }

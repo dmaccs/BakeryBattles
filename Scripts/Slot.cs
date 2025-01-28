@@ -30,7 +30,7 @@ public partial class Slot : Node2D
 
     public void RemoveBakingObject(){
         if(bakingObject != null){
-            bakingObject.Position = new Vector2(100000,100);
+            bakingObject.QueueFree();
         }
         bakingObject = null;
         spaceUsed = false;

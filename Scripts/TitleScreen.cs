@@ -13,6 +13,8 @@ public partial class TitleScreen : Node2D
     }
 
     public void _on_play_pressed(){
+        GameState.Instance.ResetGame();
         GameState.Instance.StartGame();
+        Hide();
     }
 }

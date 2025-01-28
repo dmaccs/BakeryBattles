@@ -11,6 +11,7 @@ namespace FoodFight
         {
             GD.Print("Using the oven to bake something.");
             // Add specific functionality for the oven here
+            GameState.Instance.Customer.Eat(5);
             }
         }
 
@@ -31,7 +32,7 @@ namespace FoodFight
         : base(id, itemName, width, texture, itemType, description) { }
         public override void Use()
         {
-            GD.Print("Using the toaster to toast something.");
+            GameState.Instance.Customer.Eat(2);
         }
     }
 }

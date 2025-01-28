@@ -4,7 +4,7 @@ namespace FoodFight;
 public partial class Enemy : Node2D
 {
     private Timer timer;
-    private float timeInterval = 3f;
+    public float timeInterval = 1f;
 
     public int hungerRate = 20;
     TextureProgressBar fullness;
@@ -14,15 +14,16 @@ public partial class Enemy : Node2D
     }
     public void StartFight(){
 
-        timer = new Timer();
-        AddChild(timer);
-        timer.OneShot = false;
-
-        // Connect the timeout signal to the TimesUp function
-        timer.Timeout += GetHungry;
-
+        if(timer == null){
+            timer = new Timer();
+            AddChild(timer);
+            timer.OneShot = false;
+            // Connect the timeout signal to the TimesUp function
+            timer.Timeout += GetHungry;
+        }
         // Start the timer
-        timer.Start();
+        timer.Start(timeInterval);
+        GD.Print("Starting timer: " + timeInterval);
     }
 
     private void GetHungry(){
@@ -41,6 +42,19 @@ public partial class Enemy : Node2D
 
     public void StopFight(){
         timer.Stop();
+    }
+
+    public void HideNode(){
+        Visible = false;
+    }
+
+    public void SetUpFight(int fightNumber){
+        GD.Print("Setting up fight" + fightNumber);
+        fullness.MaxValue = 100;
+        fullness.Value = 30;
+        GD.Print("Setting up fight" + fightNumber);
+        timeInterval = timeInterval/fightNumber;
+        hungerRate = 20 + fightNumber;
     }
     
 }

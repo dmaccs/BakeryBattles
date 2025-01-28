@@ -18,6 +18,7 @@ public partial class InitialEncounter : Node2D
 
     private void GenerateChoies()
     {
+        choices.Clear();
         //some function here to determine the choies randomly
         KitchenObject choice1 = KitchenObject.CreateInstance(0);
         KitchenObject choice2 = KitchenObject.CreateInstance(1);
@@ -30,6 +31,11 @@ public partial class InitialEncounter : Node2D
         AddChild(choice2);
         AddChild(choice3);
         //PlaceChoices();
+    }
+
+    public void SetUp(){
+        GenerateChoies();
+        PlaceChoices();
     }
 
     private void PlaceChoices()
@@ -103,6 +109,7 @@ public partial class InitialEncounter : Node2D
             mouseEvent.ButtonIndex == MouseButton.Left)
         {
             HandleSelection(slotIndex);
+            Hide();
         }
     }
 
@@ -110,33 +117,29 @@ public partial class InitialEncounter : Node2D
     {
         KitchenObject selectedObject = choices[slotIndex];
         GD.Print($"Selected {selectedObject.objectData.ItemName} from slot {slotIndex}");
-        for(int i = 0; i < choices.Count; i++)
-        {
-            if(i != slotIndex)
-            {
-                choices[i].QueueFree();
-            }
+        GameState.Instance.AddObject(selectedObject.objectData.ID);
+        for(int i = 0; i < choices.Count; i++){
+            choices[i].QueueFree();
         }
-        GameState.Instance.InitializeKitchen(selectedObject.objectData.ID);
     }
 
-    private List<string> getTextures(List<int> ids)
-    {
-        List<string> texturePaths = new List<string>();
-        foreach (int objectId in ids)
-        {
-            texturePaths.Add(GameState.Instance.GetObjectTexture(objectId));
-        }
-        return texturePaths;
-    }
+    // private List<string> getTextures(List<int> ids)
+    // {
+    //     List<string> texturePaths = new List<string>();
+    //     foreach (int objectId in ids)
+    //     {
+    //         texturePaths.Add(GameState.Instance.GetObjectTexture(objectId));
+    //     }
+    //     return texturePaths;
+    // }
 
-    private List<int> getObjects(int num, int sheetId)
-    {
-        if (sheetId == 0)
-        {
-            return new List<int> { 1, 2, 3 };
-        }
-        GD.Print("No Behaviour yet need to implement sheets to chose from");
-        return new List<int> { 0, 0, 0, 0 };
-    }
+    // private List<int> getObjects(int num, int sheetId)
+    // {
+    //     if (sheetId == 0)
+    //     {
+    //         return new List<int> { 1, 2, 3 };
+    //     }
+    //     GD.Print("No Behaviour yet need to implement sheets to chose from");
+    //     return new List<int> { 0, 0, 0, 0 };
+    // }
 }

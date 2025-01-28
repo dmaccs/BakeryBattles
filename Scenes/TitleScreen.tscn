@@ -7,8 +7,8 @@
 script = ExtResource("1_7pcvh")
 
 [node name="TitleScreen" type="Sprite2D" parent="."]
-position = Vector2(320, 181)
 texture = ExtResource("1_pc3kx")
+centered = false
 
 [node name="Play" type="Button" parent="."]
 unique_name_in_owner = true

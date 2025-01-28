@@ -9,6 +9,8 @@ public partial class Kitchen : Node2D
     public KitchenStations PlayerStation;
     Enemy Opponent;
 
+    int fightNumber = 1;
+
     //ObjectData ovenResource;
 
     //[Export]
@@ -21,12 +23,13 @@ public partial class Kitchen : Node2D
         //ovenResource = GD.Load<ObjectData>("res://Resources/Oven.tres");
         Opponent = GetNode<Enemy>("FoodCritic");
         GameState.Instance.Customer = Opponent;
+        SetUpFight();
     }
 
     public void _on_button_pressed()
     {
+        
         startButton.Visible = false;
-        //InitializeFight();
         StartFight();
     }
 
@@ -40,6 +43,11 @@ public partial class Kitchen : Node2D
         // PlayerStation.SetSlot(bakingObject2, 4); //addchild currently being ran in here (bad)
         // PlayerStation.SetSlot(bakingObject3, 6); 
         // do something
+    }
+
+    public void SetUpFight(){
+        startButton.Visible = true;
+        Opponent.SetUpFight(fightNumber);
     }
 
     private KitchenObject MakeNewOven(){
@@ -75,15 +83,28 @@ public partial class Kitchen : Node2D
         }
 
         Opponent.StopFight();
-        if(wonFight){
-            WinFight();
-        } else {
-            LoseFight();
-        }
+        fightNumber++;
+        // if(wonFight){
+        //     WinFight();
+        // } else {
+        //     LoseFight();
+        // }
     }
 
     private void WinFight(){
         GD.Print("Congrats you win :)!");
+    }
+
+    public void ResetKitchen(){
+        for(int i = 0; i < 10; i++){
+            PlayerStation.slots[i].RemoveBakingObject();
+        }
+        fightNumber = 1;
+
+        //THIS IS TEMPORARY
+        Opponent.timeInterval = 1f;
+        GD.Print(Opponent.timeInterval);
+        Opponent.hungerRate = 20;
     }
     
     private void LoseFight(){
