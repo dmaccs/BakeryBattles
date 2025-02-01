@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://c2e0q6wtk4wko"]
+
+[ext_resource type="Script" path="res://Scripts/FirstStop.cs" id="1_63f61"]
+[ext_resource type="Texture2D" uid="uid://bhqqvg1q76kr1" path="res://Sprites/FirstStop.png" id="2_yx4t2"]
+[ext_resource type="Texture2D" uid="uid://bgmaie8p1exfm" path="res://Sprites/Mystery.png" id="4_inci8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8nlxg"]
+size = Vector2(170, 80)
+
+[node name="FirstStop" type="Node2D"]
+script = ExtResource("1_63f61")
+
+[node name="Background" type="Sprite2D" parent="."]
+texture = ExtResource("2_yx4t2")
+centered = false
+
+[node name="FirstPlace" type="Sprite2D" parent="."]
+position = Vector2(231, 183)
+texture = ExtResource("4_inci8")
+centered = false
+
+[node name="Area2D" type="Area2D" parent="FirstPlace"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FirstPlace/Area2D"]
+position = Vector2(86, 41)
+shape = SubResource("RectangleShape2D_8nlxg")
+
+[connection signal="input_event" from="FirstPlace/Area2D" to="." method="FirstChoicePressed"]

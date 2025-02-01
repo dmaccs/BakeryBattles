@@ -1,8 +1,8 @@
 using Godot;
 
-namespace FoodFight;
+namespace FoodFight; //TODO: make a GameScene interface for all GameScenes to implement
 
-public partial class Kitchen : Node2D
+public partial class Kitchen : Node2D//, GameScene  //MAKE THIS A FOOD TRUCK SO YOU ARE DRIVING YOUR FOOD TRUCK THROUGH THE GAME!!!! 
 {
 
     Button startButton;

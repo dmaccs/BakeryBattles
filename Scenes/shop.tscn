@@ -1,3 +1,9 @@
-[gd_scene format=3 uid="uid://d4l0b624rn060"]
+[gd_scene load_steps=2 format=3 uid="uid://d4l0b624rn060"]
+
+[ext_resource type="Texture2D" uid="uid://8bvwgxgg2buq" path="res://Sprites/Storefront.png" id="1_te6lg"]
 
 [node name="Shop" type="Node2D"]
+
+[node name="Storefront" type="Sprite2D" parent="."]
+texture = ExtResource("1_te6lg")
+centered = false

@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=3 uid="uid://r4b865m004u1"]
+
+[ext_resource type="Texture2D" uid="uid://dj8wt3mx6vtia" path="res://Sprites/NextStop.png" id="1_bshc7"]
+[ext_resource type="Script" path="res://Scripts/NextStop.cs" id="1_rds0s"]
+[ext_resource type="Texture2D" uid="uid://cgflvf4qho4d0" path="res://Sprites/Shop.png" id="2_ro7rr"]
+[ext_resource type="Texture2D" uid="uid://bgmaie8p1exfm" path="res://Sprites/Mystery.png" id="3_1k67h"]
+[ext_resource type="Texture2D" uid="uid://dt533gohiybuc" path="res://Sprites/Forest.png" id="4_60n48"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8nlxg"]
+size = Vector2(170, 80)
+
+[node name="NextStop" type="Node2D"]
+script = ExtResource("1_rds0s")
+
+[node name="NextStop" type="Sprite2D" parent="."]
+texture = ExtResource("1_bshc7")
+centered = false
+
+[node name="Choice1" type="Sprite2D" parent="."]
+position = Vector2(53, 183)
+texture = ExtResource("2_ro7rr")
+centered = false
+
+[node name="Area2D" type="Area2D" parent="Choice1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Choice1/Area2D"]
+position = Vector2(86, 41)
+shape = SubResource("RectangleShape2D_8nlxg")
+
+[node name="Choice2" type="Sprite2D" parent="."]
+position = Vector2(231, 183)
+texture = ExtResource("3_1k67h")
+centered = false
+
+[node name="Area2D" type="Area2D" parent="Choice2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Choice2/Area2D"]
+position = Vector2(86, 41)
+shape = SubResource("RectangleShape2D_8nlxg")
+
+[node name="Choice3" type="Sprite2D" parent="."]
+position = Vector2(409, 183)
+texture = ExtResource("4_60n48")
+centered = false
+
+[node name="Area2D" type="Area2D" parent="Choice3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Choice3/Area2D"]
+position = Vector2(86, 41)
+shape = SubResource("RectangleShape2D_8nlxg")

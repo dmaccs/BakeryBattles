@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Runtime.Serialization.Formatters;
 using Godot;
 
@@ -19,17 +20,21 @@ public partial class GameState : Node
 
     int encoutnerNum = 0;
 
+    HashSet<int> InstantiatedScenes = new HashSet<int>();
+
     public int Score = -69;
     int firstObjectID = 0;
     private uint seed;
+
+    public int PlayerID = 0;
 
     Control UI;
     //All of the loaded scenes
     private InitialEncounter initialEncounter;
     private BattleTransition EndFightSceneNode;
-
+    private FirstStop FirstStop;
+    private NextStop NextStop;
     private TitleScreen TitleScreen;
-
     private GameOver GameoverScreen;
 
     public override void _Ready()
@@ -205,6 +210,24 @@ public partial class GameState : Node
             InitializeGame();
         }
         encoutnerNum++;
+    }
+
+    public void LoadEncounter(int choice)
+    {
+        GD.Print($"Choice {choice} selected.");
+        if(!InstantiatedScenes.Contains(choice)){
+            object LoadedScene = InstantiateScene(0);
+            //(GameScene)LoadedScene.Load();
+        }
+    }
+
+    private object InstantiateScene(int sceneNum){
+        string PackedScenePath = ScenePaths.GetScenePath(sceneNum);
+        PackedScene nextScene = GD.Load<PackedScene>(PackedScenePath);
+        Node nextSceneNode = nextScene.Instantiate();
+        GetTree().Root.AddChild(nextSceneNode);
+        InstantiatedScenes.Add(sceneNum);
+        return nextSceneNode;
     }
 
     public void AddItemToPlayer(KitchenObject item)

@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cck63glbueofk"]
 
 [ext_resource type="Texture2D" uid="uid://o33uskm748e0" path="res://Sprites/ContinuButton.png" id="1_7a5cd"]
-[ext_resource type="Script" path="res://Scenes/BattleTransition.cs" id="1_mept3"]
+[ext_resource type="Script" path="res://Scripts/BattleTransition.cs" id="1_mept3"]
 [ext_resource type="Texture2D" uid="uid://c4nl1pw3e6wwp" path="res://Sprites/ContinuButtonHover.png" id="2_y78iq"]
 [ext_resource type="Texture2D" uid="uid://bdp0icdi1wiuq" path="res://Sprites/Background.png" id="3_0lybx"]
 
