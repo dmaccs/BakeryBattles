@@ -2,7 +2,7 @@ using Godot;
 
 namespace FoodFight;
 
-public partial class TitleScreen : Node2D
+public partial class TitleScreen : Node2D, GameScene
 {
     public override void _Ready()
     {  
@@ -16,5 +16,11 @@ public partial class TitleScreen : Node2D
         GameState.Instance.ResetGame();
         GameState.Instance.StartGame();
         Hide();
+    }
+
+    public void SetUp()
+    {
+       GD.Print("setting up title screen");
+       Show();
     }
 }

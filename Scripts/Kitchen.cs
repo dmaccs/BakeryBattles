@@ -2,7 +2,7 @@ using Godot;
 
 namespace FoodFight; //TODO: make a GameScene interface for all GameScenes to implement
 
-public partial class Kitchen : Node2D//, GameScene  //MAKE THIS A FOOD TRUCK SO YOU ARE DRIVING YOUR FOOD TRUCK THROUGH THE GAME!!!! 
+public partial class Kitchen : Node2D, GameScene//, GameScene  //MAKE THIS A FOOD TRUCK SO YOU ARE DRIVING YOUR FOOD TRUCK THROUGH THE GAME!!!! 
 {
 
     Button startButton;
@@ -22,8 +22,6 @@ public partial class Kitchen : Node2D//, GameScene  //MAKE THIS A FOOD TRUCK SO 
         PlayerStation = GetNode<KitchenStations>("KitchenStations1");
         //ovenResource = GD.Load<ObjectData>("res://Resources/Oven.tres");
         Opponent = GetNode<Enemy>("FoodCritic");
-        GameState.Instance.Customer = Opponent;
-        SetUpFight();
     }
 
     public void _on_button_pressed()
@@ -45,7 +43,9 @@ public partial class Kitchen : Node2D//, GameScene  //MAKE THIS A FOOD TRUCK SO 
         // do something
     }
 
-    public void SetUpFight(){
+    public void SetUp(){
+        Show();
+        GameState.Instance.Customer = Opponent;
         startButton.Visible = true;
         Opponent.SetUpFight(fightNumber);
     }

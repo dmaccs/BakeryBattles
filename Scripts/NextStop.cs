@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Dynamic;
 
-public partial class NextStop : Node2D
+public partial class NextStop : Node2D, GameScene
 {
     CollisionShape2D choice1;
     CollisionShape2D choice2;
@@ -17,6 +17,7 @@ public partial class NextStop : Node2D
             SetClickEvents();
         }
         GetOptions(1);
+        Show();
     }
 
     private void SetClickEvents(){
@@ -41,9 +42,9 @@ public partial class NextStop : Node2D
 
     private void GetOptions(int currLevel){ // converts choice to the id of the next place you are going
         options.Clear();
-        options.Add(1, 1);
-        options.Add(2, 2);
-        options.Add(3, 3);   
+        options.Add(1, 6);
+        options.Add(2, 5);
+        options.Add(3, 5);   
         //use a function to determine the options based on the current level
         //30% chance of a forest 20% chance of a 
     }

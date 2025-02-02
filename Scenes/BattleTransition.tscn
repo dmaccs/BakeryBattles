@@ -51,3 +51,5 @@ texture_hover = ExtResource("2_y78iq")
 z_index = -1
 texture = ExtResource("3_0lybx")
 centered = false
+
+[connection signal="pressed" from="Continue" to="." method="ContinuePressed"]

@@ -52,7 +52,6 @@ public partial class Enemy : Node2D
         GD.Print("Setting up fight" + fightNumber);
         fullness.MaxValue = 100;
         fullness.Value = 30;
-        GD.Print("Setting up fight" + fightNumber);
         timeInterval = timeInterval/fightNumber;
         hungerRate = 20 + fightNumber;
     }

@@ -2,7 +2,7 @@ using FoodFight;
 using Godot;
 using System;
 
-public partial class FirstStop : Node2D
+public partial class FirstStop : Node2D, GameScene
 {
     Sprite2D choiceSprite;
     
@@ -10,23 +10,19 @@ public partial class FirstStop : Node2D
     {
         choiceSprite = GetNode<Sprite2D>("FirstPlace");
     }
-    public void setup(){
+    public void SetUp(){
         if(choiceSprite != null){
-            try{
-                choiceSprite.Texture = GD.Load<Texture2D>("res://PlayerShopTextures/Player" + GameState.Instance.PlayerID + ".png");
-            } catch (Exception e){
-                GD.Print("Player" + GameState.Instance.PlayerID + ".png not found" + " Error: " + e);
-            }
-            
+            choiceSprite.Texture = GD.Load<Texture2D>("res://PlayerShopTextures/Player" + GameState.Instance.PlayerID + ".png");
         }
+        Show();
     }
 
-    public void FirstChoicePressed(InputEvent @event){
+    public void FirstChoicePressed(Node viewport, InputEvent @event, int shape_idx){
         if (@event is InputEventMouseButton mouseEvent &&
             mouseEvent.Pressed &&
             mouseEvent.ButtonIndex == MouseButton.Left)
         {
-            GameState.Instance.LoadEncounter(GameState.Instance.PlayerID);
+            GameState.Instance.LoadEncounter(2);//GameState.Instance.PlayerID);
             Hide();
         }
     }

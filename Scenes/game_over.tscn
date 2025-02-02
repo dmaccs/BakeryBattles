@@ -26,3 +26,5 @@ offset_top = 278.0
 offset_right = 393.0
 offset_bottom = 344.0
 text = "Back to menu :("
+
+[connection signal="pressed" from="Button" to="." method="BackToMenuPressed"]
