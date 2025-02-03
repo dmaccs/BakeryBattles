@@ -8,4 +8,9 @@ public partial class Shop : Node2D, GameScene
         GD.Print("Setting up shop!");
         Show();
     }
+
+    private void ContinuePressed(){
+        GD.Print("You left the shop");
+        GameState.Instance.FinishedEncounter();
+    }
 }

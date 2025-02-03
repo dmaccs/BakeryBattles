@@ -1,10 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://dl3fei6duluyw"]
+[gd_scene load_steps=5 format=3 uid="uid://dl3fei6duluyw"]
 
+[ext_resource type="Script" path="res://Scenes/GameUi.cs" id="1_j6b71"]
 [ext_resource type="Texture2D" uid="uid://cd2jan0tuafsf" path="res://Sprites/HeartBackground.png" id="1_v8vhr"]
 [ext_resource type="Texture2D" uid="uid://bcbpi8wnnki4b" path="res://Sprites/heart.png" id="2_ckgca"]
+[ext_resource type="Texture2D" uid="uid://dieeylriopjgx" path="res://Sprites/LargerCoinCounter.png" id="3_yw1q4"]
 
 [node name="GameUi" type="Control"]
 visible = false
+z_index = 1
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -12,6 +15,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
+script = ExtResource("1_j6b71")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -56,3 +60,19 @@ stretch_mode = 2
 layout_mode = 2
 texture = ExtResource("2_ckgca")
 stretch_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 111.0
+offset_top = 9.0
+offset_right = 163.0
+offset_bottom = 27.0
+texture = ExtResource("3_yw1q4")
+
+[node name="CoinCount" type="Label" parent="."]
+layout_mode = 0
+offset_left = 113.0
+offset_top = 6.0
+offset_right = 141.0
+offset_bottom = 29.0
+text = "000"

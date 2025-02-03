@@ -21,13 +21,15 @@ public partial class GameState : Node
 
     int encounterNum = 0;
 
+    public int coins = 0;
+
     public int Score = -69;
     int firstObjectID = 0;
     private uint seed;
 
     public int PlayerID = 1;
 
-    Control UI;
+    GameUi  UI;
     //All of the loaded scenes
     // private InitialEncounter initialEncounter;
     // private BattleTransition EndFightSceneNode;
@@ -46,7 +48,7 @@ public partial class GameState : Node
         Instance = this;
         Viewport root = GetTree().Root;
         RootScene = root.GetChild(-1);
-        UI = GetNode<Control>("/root/GameUi");
+        UI = GetNode<GameUi>("/root/GameUi");
         emptyHeartTexture = GD.Load<Texture2D>("res://Sprites/emptyheart.png");
         fullHeartTexture = GD.Load<Texture2D>("res://Sprites/heart.png");
         GD.Print("Game State Ready");
@@ -64,6 +66,8 @@ public partial class GameState : Node
         }
         else
         {
+            coins += 30;
+            UI.UpdateCoins();
             GD.Print("Won Fight");
             ((Node2D)GameScenes[4]).GetNode<RichTextLabel>("Control/Container/Rewards").Visible = true;
         }
@@ -90,7 +94,7 @@ public partial class GameState : Node
     private void LoseLife()
     {
         if (Health <= 0) return;
-
+        //TODO: move into UI
         var heartContainer = UI.GetNode<HBoxContainer>("TextureRect/HBoxContainer");
         var healthIcon = heartContainer.GetNode<TextureRect>($"Health{Health}");
         healthIcon.Texture = emptyHeartTexture;
@@ -201,6 +205,8 @@ public partial class GameState : Node
             GD.Print("Resetting game!");
             PlayerKitchen.ResetKitchen();
         }
+        coins = 0;
+        UI.UpdateCoins();
         ResetLife();
     }
 

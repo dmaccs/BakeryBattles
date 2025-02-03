@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://d4l0b624rn060"]
+[gd_scene load_steps=6 format=3 uid="uid://d4l0b624rn060"]
 
 [ext_resource type="Script" path="res://Scripts/Shop.cs" id="1_gf2sq"]
 [ext_resource type="Texture2D" uid="uid://8bvwgxgg2buq" path="res://Sprites/Storefront.png" id="1_te6lg"]
+[ext_resource type="Texture2D" uid="uid://o33uskm748e0" path="res://Sprites/ContinuButton.png" id="3_mdeah"]
+[ext_resource type="Texture2D" uid="uid://c4nl1pw3e6wwp" path="res://Sprites/ContinuButtonHover.png" id="4_02suo"]
+[ext_resource type="PackedScene" uid="uid://rfmhtisj3kgo" path="res://Scenes/clickable_slot.tscn" id="5_7uqtp"]
 
 [node name="Shop" type="Node2D"]
 script = ExtResource("1_gf2sq")
@@ -9,3 +12,24 @@ script = ExtResource("1_gf2sq")
 [node name="Storefront" type="Sprite2D" parent="."]
 texture = ExtResource("1_te6lg")
 centered = false
+
+[node name="Continue" type="TextureButton" parent="."]
+offset_left = 218.0
+offset_top = 83.0
+offset_right = 398.0
+offset_bottom = 123.0
+texture_normal = ExtResource("3_mdeah")
+texture_pressed = ExtResource("3_mdeah")
+texture_hover = ExtResource("4_02suo")
+
+[node name="ClickableSlot1" parent="." instance=ExtResource("5_7uqtp")]
+
+[node name="ClickableSlot2" parent="." instance=ExtResource("5_7uqtp")]
+
+[node name="ClickableSlot3" parent="." instance=ExtResource("5_7uqtp")]
+
+[node name="ClickableSlot4" parent="." instance=ExtResource("5_7uqtp")]
+
+[node name="ClickableSlot5" parent="." instance=ExtResource("5_7uqtp")]
+
+[connection signal="pressed" from="Continue" to="." method="ContinuePressed"]
