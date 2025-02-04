@@ -8,12 +8,13 @@ public partial class Enemy : Node2D
 
     public int hungerRate = 20;
     TextureProgressBar fullness;
+    bool IsFighting = false;
     public override void _Ready()
     {
         fullness = GetNode<TextureProgressBar>("Control/Health");
     }
     public void StartFight(){
-
+        IsFighting = true;
         if(timer == null){
             timer = new Timer();
             AddChild(timer);
@@ -35,12 +36,14 @@ public partial class Enemy : Node2D
 
     public void Eat(int satiation){
         fullness.Value += satiation;
-        if(fullness.Value == fullness.MaxValue){
+        if(IsFighting && fullness.Value == fullness.MaxValue){
+            IsFighting = false;
             GameState.Instance.FightOver(true); //win fight because satiated the hunger
         }
     }
 
     public void StopFight(){
+        IsFighting = false;
         timer.Stop();
     }
 

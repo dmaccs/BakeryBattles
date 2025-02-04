@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://c5wep5xxk8hdc"]
+
+[ext_resource type="Texture2D" uid="uid://dyswstgfmuvm2" path="res://Sprites/RestStop.png" id="1_pqhde"]
+
+[node name="RestStop" type="Node2D"]
+
+[node name="RestStop" type="Sprite2D" parent="."]
+texture = ExtResource("1_pqhde")
+centered = false

@@ -14,7 +14,8 @@ namespace FoodFight
             { 3, "res://Scenes/game_over.tscn"},
             { 4, "res://Scenes/BattleTransition.tscn"},
             { 5, "res://Scenes/kitchen.tscn"},
-            { 6, "res://Scenes/shop.tscn"}
+            { 6, "res://Scenes/shop.tscn"},
+            { 7, "res://Scenes/event_scene.tscn"},
             // Add more scenes here
         };
 

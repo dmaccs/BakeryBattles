@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dt533gohiybuc" path="res://Sprites/Forest.png" id="4_60n48"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8nlxg"]
-size = Vector2(170, 80)
+size = Vector2(172.25, 82.25)
 
 [node name="NextStop" type="Node2D"]
 script = ExtResource("1_rds0s")
@@ -35,7 +35,7 @@ centered = false
 [node name="Area2D" type="Area2D" parent="Choice2"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Choice2/Area2D"]
-position = Vector2(86, 41)
+position = Vector2(86.25, 41.25)
 shape = SubResource("RectangleShape2D_8nlxg")
 
 [node name="Choice3" type="Sprite2D" parent="."]
@@ -46,5 +46,5 @@ centered = false
 [node name="Area2D" type="Area2D" parent="Choice3"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Choice3/Area2D"]
-position = Vector2(86, 41)
+position = Vector2(86.125, 41.125)
 shape = SubResource("RectangleShape2D_8nlxg")
