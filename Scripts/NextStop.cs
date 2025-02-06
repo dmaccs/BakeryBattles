@@ -42,7 +42,7 @@ public partial class NextStop : Node2D, GameScene
   
     private void GetOptions(int currLevel){ // converts choice to the id of the next place you are going
         options.Clear();
-        options.Add(1, 6);
+        options.Add(1, 2);
         options.Add(2, 7);
         options.Add(3, 5);
         //TODO: use a function to determine the options based on the current level

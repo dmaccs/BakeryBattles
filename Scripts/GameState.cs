@@ -21,13 +21,15 @@ public partial class GameState : Node
 
     int encounterNum = 0;
 
-    public int coins = 0;
+    public int coins { get; set; } = 0;
 
     public int Score = -69;
     int firstObjectID = 0;
     private uint seed;
 
     public int PlayerID = 1;
+
+    public Random RandomNumberGenerator;
 
     GameUi  UI;
     //All of the loaded scenes
@@ -122,6 +124,7 @@ public partial class GameState : Node
         GD.Randomize();
         seed = GD.Randi();
         GD.Seed(seed);
+        RandomNumberGenerator = new Random((int)seed);
         encounterNum = 0;
         Health = 5; // can make this change for different players
         Score = 0;
@@ -175,6 +178,14 @@ public partial class GameState : Node
         }
         KitchenObject firstObject = KitchenObject.CreateInstance(objectID);
         PlayerKitchen.PlayerStation.AddObject(firstObject);
+    }
+
+    public void ChangeCoins(int changeAmount){
+        coins+= changeAmount;
+        if(coins<0){
+            coins = 0;
+        }
+        UI.UpdateCoins();
     }
 
     public void FinishedEncounter(){

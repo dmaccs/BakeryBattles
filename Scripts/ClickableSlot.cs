@@ -42,6 +42,7 @@ public partial class ClickableSlot : Node2D
     public void Subscribe(Callable func, int newSlotNum){
         slotNum = newSlotNum;
         subscribedFunction = func;
+        GD.Print("SUB1");
 
     }
 }

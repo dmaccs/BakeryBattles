@@ -19,6 +19,7 @@ config/icon="res://Sprites/icon.svg"
 
 GameState="*res://Scripts/GameState.cs"
 GameUi="*res://Scenes/GameUi.tscn"
+EventData="*res://AutoLoads/EventData.cs"
 
 [display]
 

@@ -1,0 +1,1 @@
+go into Utils folder and run dotnet-script EventDictionaryLoder.cs to turn EventBook.csv into a Json to read

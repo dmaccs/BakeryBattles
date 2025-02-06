@@ -34,9 +34,7 @@ layout_mode = 2
 bbcode_enabled = true
 text = "[color=black]Congratulations on your victory!
 Rewards:
-X Ingredients
-X Gold
-1 Random Appliance[/color]"
+30 Gold[/color]"
 
 [node name="Continue" type="TextureButton" parent="."]
 offset_left = 230.0
