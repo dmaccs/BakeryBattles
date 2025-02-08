@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://ijvxdeqkbacl" path="res://Scenes/kitchen_stations.tscn" id="3_m3su0"]
 [ext_resource type="Script" path="res://Scripts/Kitchen.cs" id="4_7fqir"]
-[ext_resource type="PackedScene" uid="uid://bxcd344w4f35u" path="res://Scenes/Enemy.tscn" id="4_bl1jx"]
+[ext_resource type="PackedScene" uid="uid://bxcd344w4f35u" path="res://Scenes/Encounter.tscn" id="4_bl1jx"]
 [ext_resource type="Texture2D" uid="uid://bdp0icdi1wiuq" path="res://Sprites/Background.png" id="5_eixyq"]
 
 [node name="Kitchen" type="Node2D"]

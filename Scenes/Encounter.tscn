@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bxcd344w4f35u"]
 
-[ext_resource type="Script" path="res://Scripts/Enemy.cs" id="1_6q0ah"]
+[ext_resource type="Script" path="res://Scripts/Encounter.cs" id="1_6q0ah"]
 [ext_resource type="Texture2D" uid="uid://b4ncegka5cyqe" path="res://Sprites/healthbar_Under.png" id="2_opi7x"]
 [ext_resource type="Texture2D" uid="uid://dse5hod6rxr2d" path="res://Sprites/GingerBreadFighter.png" id="2_txluq"]
 [ext_resource type="Texture2D" uid="uid://bw2ordrho38uw" path="res://Sprites/healthbar.png" id="3_ja2ty"]

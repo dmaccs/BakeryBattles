@@ -7,7 +7,7 @@ public partial class Kitchen : Node2D, GameScene//, GameScene  //MAKE THIS A FOO
 
     Button startButton;
     public KitchenStations PlayerStation;
-    Enemy Opponent;
+    Encounter Opponent;
 
     int fightNumber = 1;
 
@@ -21,7 +21,7 @@ public partial class Kitchen : Node2D, GameScene//, GameScene  //MAKE THIS A FOO
         startButton = GetNode<Button>("Button");
         PlayerStation = GetNode<KitchenStations>("KitchenStations1");
         //ovenResource = GD.Load<ObjectData>("res://Resources/Oven.tres");
-        Opponent = GetNode<Enemy>("FoodCritic");
+        Opponent = GetNode<Encounter>("FoodCritic");
     }
 
     public void _on_button_pressed()

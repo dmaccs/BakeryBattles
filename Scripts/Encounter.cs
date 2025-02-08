@@ -1,7 +1,7 @@
 using Godot;
 
 namespace FoodFight;
-public partial class Enemy : Node2D
+public partial class Encounter : Node2D
 {
     private Timer timer;
     public float timeInterval = 1f;

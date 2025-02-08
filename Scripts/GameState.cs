@@ -11,7 +11,7 @@ public partial class GameState : Node
 
     private Texture2D fullHeartTexture;
     Kitchen PlayerKitchen;
-    public Enemy Customer;
+    public Encounter Customer;
 
     public static GameState Instance { get; private set; }
 
