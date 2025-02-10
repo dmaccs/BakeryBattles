@@ -13,7 +13,7 @@ public partial class KitchenObject : Node2D
 
     private string WarCry;
 
-    private Encounter Customer;
+    private Enemy Customer;
     public Sprite2D sprite { get; set; }
 
     private Area2D area;
@@ -90,7 +90,7 @@ public partial class KitchenObject : Node2D
         }
     }
 
-    public void StartFight(string warCry, Encounter customer)
+    public void StartFight(string warCry, Enemy customer)
     {
         timer = new Timer();
         AddChild(timer);

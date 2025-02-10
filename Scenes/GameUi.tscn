@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://dl3fei6duluyw"]
+[gd_scene load_steps=7 format=3 uid="uid://dl3fei6duluyw"]
 
-[ext_resource type="Script" path="res://Scripts/GameUi.cs" id="1_j6b71"]
+[ext_resource type="Script" path="res://AutoLoads/GameUi.cs" id="1_j6b71"]
 [ext_resource type="Texture2D" uid="uid://cd2jan0tuafsf" path="res://Sprites/HeartBackground.png" id="1_v8vhr"]
 [ext_resource type="Texture2D" uid="uid://bcbpi8wnnki4b" path="res://Sprites/heart.png" id="2_ckgca"]
 [ext_resource type="Texture2D" uid="uid://dieeylriopjgx" path="res://Sprites/LargerCoinCounter.png" id="3_yw1q4"]
+[ext_resource type="Texture2D" uid="uid://crq4woh5tlcg5" path="res://Sprites/Timer.png" id="5_3rl0p"]
+[ext_resource type="PackedScene" uid="uid://buobw4ssbbrfc" path="res://Scenes/run_timer.tscn" id="6_nmtnv"]
 
 [node name="GameUi" type="Control"]
 visible = false
@@ -76,3 +78,33 @@ offset_top = 6.0
 offset_right = 141.0
 offset_bottom = 29.0
 text = "000"
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 165.0
+offset_top = 9.0
+offset_right = 237.0
+offset_bottom = 27.0
+scale = Vector2(1.04, 1)
+texture = ExtResource("5_3rl0p")
+
+[node name="RunTimer" parent="." instance=ExtResource("6_nmtnv")]
+layout_mode = 0
+offset_left = 151.0
+offset_top = 6.0
+offset_right = 222.0
+offset_bottom = 29.0
+text = "00:00"
+fit_content = true
+scroll_active = false
+text_direction = 2
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 564.0
+offset_top = 9.0
+offset_right = 631.0
+offset_bottom = 40.0
+text = "Kitchen"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

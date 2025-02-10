@@ -47,8 +47,7 @@ public partial class EventScene : Node2D, GameScene
 
     public void HandleSelection(int optionNumber){
         GD.Print("Option " + optionNumber + " chosen.");
-        EventRewards eventRewards = new EventRewards();
-        eventRewards.GetRewards(RewardIDs[optionNumber]);
+        EventRewards.GetRewards(RewardIDs[optionNumber]);
         //TODO: do something to see if event is still ongoing otherwise remove the options and put just a leave button
         if(RewardIDs[optionNumber] != 0){
             EventOptions[0].Show();

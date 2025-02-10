@@ -1,9 +1,9 @@
 using Godot;
 
 namespace FoodFight;
-public class EventRewards{
+public static class EventRewards{
 
-public void GetRewards(int RewardsID){ //TODO: Put functionality for many rewards into here
+public static void GetRewards(int RewardsID){ //TODO: Put functionality for many rewards into here
     switch (RewardsID){
         case 0:
             GameState.Instance.FinishedEncounter();

@@ -11,7 +11,7 @@ public partial class GameState : Node
 
     private Texture2D fullHeartTexture;
     Kitchen PlayerKitchen;
-    public Encounter Customer;
+    public Enemy Customer;
 
     public static GameState Instance { get; private set; }
 
@@ -58,7 +58,7 @@ public partial class GameState : Node
 
     public void FightOver(bool didWin)
     {
-        PlayerKitchen.StopFight(didWin);
+        //PlayerKitchen.StopFight(didWin);
         EndFight();
         if (!didWin)
         {
@@ -129,6 +129,7 @@ public partial class GameState : Node
         Health = 5; // can make this change for different players
         Score = 0;
         UI.Visible = true;
+        UI.StartRun();
         LoadEncounter(0);
         if(!GameScenes.ContainsKey(5)){
             GameScenes.Add(5, (GameScene)InstantiateScene(5));
@@ -207,6 +208,7 @@ public partial class GameState : Node
         Node2D theScene = (Node2D)GameScenes[currScene];
         theScene.Hide();
         UI.Visible = false;
+        UI.GameOver();
         currScene = 3;
         }
 

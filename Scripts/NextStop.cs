@@ -44,7 +44,7 @@ public partial class NextStop : Node2D, GameScene
         options.Clear();
         options.Add(1, 2);
         options.Add(2, 7);
-        options.Add(3, 5);
+        options.Add(3, 8);
         //TODO: use a function to determine the options based on the current level
         //30% chance of a forest 20% chance of a 
     }

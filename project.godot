@@ -17,9 +17,10 @@ config/icon="res://Sprites/icon.svg"
 
 [autoload]
 
-GameState="*res://Scripts/GameState.cs"
+GameState="*res://AutoLoads/GameState.cs"
 GameUi="*res://Scenes/GameUi.tscn"
 EventData="*res://AutoLoads/EventData.cs"
+GlobalTimer="*res://AutoLoads/GlobalTimer.cs"
 
 [display]
 
