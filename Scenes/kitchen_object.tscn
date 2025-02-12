@@ -22,6 +22,7 @@ shape = SubResource("RectangleShape2D_3iv5g")
 [node name="Panel" type="Panel" parent="."]
 unique_name_in_owner = true
 visible = false
+z_index = 1
 offset_left = -40.0
 offset_right = 40.0
 offset_bottom = 40.0

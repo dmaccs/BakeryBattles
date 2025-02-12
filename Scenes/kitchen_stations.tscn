@@ -8,45 +8,56 @@
 script = ExtResource("1_lh750")
 
 [node name="Slot1" type="Node2D" parent="."]
+z_index = 1
 script = ExtResource("2_e7kae")
 
 [node name="Slot2" type="Node2D" parent="."]
+z_index = 1
 position = Vector2(50, 0)
 script = ExtResource("2_e7kae")
 
 [node name="Slot3" type="Node2D" parent="."]
+z_index = 1
 position = Vector2(100, 0)
 script = ExtResource("2_e7kae")
 
 [node name="Slot4" type="Node2D" parent="."]
+z_index = 1
 position = Vector2(150, 0)
 script = ExtResource("2_e7kae")
 
 [node name="Slot5" type="Node2D" parent="."]
+z_index = 1
 position = Vector2(200, 0)
 script = ExtResource("2_e7kae")
 
 [node name="Slot6" type="Node2D" parent="."]
+z_index = 1
 position = Vector2(250, 0)
 script = ExtResource("2_e7kae")
 
 [node name="Slot7" type="Node2D" parent="."]
+z_index = 1
 position = Vector2(300, 0)
 script = ExtResource("2_e7kae")
 
 [node name="Slot8" type="Node2D" parent="."]
+z_index = 1
 position = Vector2(350, 0)
 script = ExtResource("2_e7kae")
 
 [node name="Slot9" type="Node2D" parent="."]
+z_index = 1
 position = Vector2(400, 0)
 script = ExtResource("2_e7kae")
 
 [node name="Slot10" type="Node2D" parent="."]
+z_index = 1
 position = Vector2(450, 0)
 script = ExtResource("2_e7kae")
 
 [node name="TextureRect" type="TextureRect" parent="."]
+z_index = 1
 texture_repeat = 2
 offset_right = 500.0
 offset_bottom = 50.0

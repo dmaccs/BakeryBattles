@@ -11,6 +11,8 @@ public partial class Enemy : Node2D
     double actualFullness = 0;
     bool IsFighting = false;
 
+    private double startingFullness = 30;
+
     List<EnemyAbility> Abilities = new List<EnemyAbility>();
     public override void _Ready()
     {
@@ -21,7 +23,6 @@ public partial class Enemy : Node2D
     public Enemy(int enemyID){
         Enemies.setEnemy(this,enemyID);
         fullness.MaxValue = maxFullness;
-        actualFullness = fullness.Value;
     }
     public Enemy(){
 
@@ -63,6 +64,10 @@ public partial class Enemy : Node2D
     public void StartFight(){
         IsFighting = true;
         actualFullness = fullness.Value;
+    }
+
+    public void ResetValues(){
+        actualFullness = fullness.Value = startingFullness;
     }
     
 }

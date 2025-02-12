@@ -17,6 +17,7 @@ texture = ExtResource("1_bshc7")
 centered = false
 
 [node name="Choice1" type="Sprite2D" parent="."]
+z_index = 1
 position = Vector2(53, 183)
 texture = ExtResource("2_ro7rr")
 centered = false
@@ -28,6 +29,7 @@ position = Vector2(86, 41)
 shape = SubResource("RectangleShape2D_8nlxg")
 
 [node name="Choice2" type="Sprite2D" parent="."]
+z_index = 1
 position = Vector2(231, 183)
 texture = ExtResource("3_1k67h")
 centered = false
@@ -39,6 +41,7 @@ position = Vector2(86.25, 41.25)
 shape = SubResource("RectangleShape2D_8nlxg")
 
 [node name="Choice3" type="Sprite2D" parent="."]
+z_index = 1
 position = Vector2(409, 183)
 texture = ExtResource("4_60n48")
 centered = false

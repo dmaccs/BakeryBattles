@@ -12,11 +12,13 @@ offset_right = 640.0
 offset_bottom = 360.0
 
 [node name="FoodTruckFightScene" type="Sprite2D" parent="."]
+z_index = 1
 position = Vector2(0, 30)
 texture = ExtResource("3_0o56x")
 centered = false
 
 [node name="Button" type="Button" parent="."]
+z_index = 2
 offset_left = 172.0
 offset_top = 189.0
 offset_right = 303.0
@@ -24,6 +26,7 @@ offset_bottom = 227.0
 text = "Start Fight!"
 
 [node name="Enemy" parent="." instance=ExtResource("2_2p828")]
+z_index = 1
 position = Vector2(547, 319)
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

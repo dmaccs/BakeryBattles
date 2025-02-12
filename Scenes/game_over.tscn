@@ -12,6 +12,7 @@ texture = ExtResource("2_r7bc4")
 centered = false
 
 [node name="Score" type="Label" parent="."]
+z_index = 2
 offset_left = 19.0
 offset_top = -3.0
 offset_right = 357.0
@@ -21,6 +22,7 @@ theme_override_font_sizes/font_size = 69
 text = "SCORE: 0"
 
 [node name="Button" type="Button" parent="."]
+z_index = 2
 offset_left = 184.0
 offset_top = 278.0
 offset_right = 393.0

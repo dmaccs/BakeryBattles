@@ -9,6 +9,7 @@
 script = ExtResource("1_mept3")
 
 [node name="Control" type="Control" parent="."]
+z_index = 1
 layout_mode = 3
 anchors_preset = 0
 offset_right = 640.0
@@ -23,20 +24,41 @@ anchor_left = 0.189
 anchor_top = 0.078
 anchor_right = 0.82
 anchor_bottom = 0.622
-offset_left = 0.0399933
+offset_left = -8.96
 offset_top = -0.0799999
-offset_right = 0.199951
-offset_bottom = 0.0799866
+offset_right = 1.20001
+offset_bottom = -7.92
 
 [node name="Rewards" type="RichTextLabel" parent="Control/Container"]
-custom_minimum_size = Vector2(400, 200)
+z_index = 1
+custom_minimum_size = Vector2(415, 188)
 layout_mode = 2
 bbcode_enabled = true
 text = "[color=black]Congratulations on your victory!
 Rewards:
 30 Gold[/color]"
 
+[node name="TextureRect" type="TextureRect" parent="Control"]
+custom_minimum_size = Vector2(300, 200)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -215.0
+offset_top = -157.0
+offset_right = 213.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 10
+size_flags_vertical = 10
+texture = ExtResource("3_0lybx")
+expand_mode = 1
+
 [node name="Continue" type="TextureButton" parent="."]
+z_index = 1
 offset_left = 230.0
 offset_top = 240.0
 offset_right = 410.0
@@ -44,10 +66,5 @@ offset_bottom = 280.0
 texture_normal = ExtResource("1_7a5cd")
 texture_pressed = ExtResource("1_7a5cd")
 texture_hover = ExtResource("2_y78iq")
-
-[node name="Background" type="Sprite2D" parent="."]
-z_index = -1
-texture = ExtResource("3_0lybx")
-centered = false
 
 [connection signal="pressed" from="Continue" to="." method="ContinuePressed"]

@@ -1,5 +1,7 @@
+using System;
 using System.Collections.Generic;
-
+using System.IO;
+using Godot;
 
 namespace FoodFight
 {
@@ -29,5 +31,18 @@ namespace FoodFight
             }
             return "";
         }
+
+        public static Dictionary<string, int> GetSceneEnum()
+        {
+            var sceneEnum = new Dictionary<string, int>();
+            foreach (var kvp in ScenePathDict)
+            {
+                string sceneName = Path.GetFileNameWithoutExtension(kvp.Value).Replace(" ", "");
+                sceneEnum[sceneName] = kvp.Key;
+            }
+            return sceneEnum;
+            
+        }
     }
+    //make a function that loops from 1-100 and prints hello x times for each iteration where x is the current iteratino number 
 }

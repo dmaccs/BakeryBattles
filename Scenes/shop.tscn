@@ -14,6 +14,7 @@ texture = ExtResource("1_te6lg")
 centered = false
 
 [node name="Continue" type="TextureButton" parent="."]
+z_index = 1
 offset_left = 218.0
 offset_top = 83.0
 offset_right = 398.0
@@ -23,13 +24,18 @@ texture_pressed = ExtResource("3_mdeah")
 texture_hover = ExtResource("4_02suo")
 
 [node name="ClickableSlot1" parent="." instance=ExtResource("5_7uqtp")]
+z_index = 1
 
 [node name="ClickableSlot2" parent="." instance=ExtResource("5_7uqtp")]
+z_index = 1
 
 [node name="ClickableSlot3" parent="." instance=ExtResource("5_7uqtp")]
+z_index = 1
 
 [node name="ClickableSlot4" parent="." instance=ExtResource("5_7uqtp")]
+z_index = 1
 
 [node name="ClickableSlot5" parent="." instance=ExtResource("5_7uqtp")]
+z_index = 1
 
 [connection signal="pressed" from="Continue" to="." method="ContinuePressed"]

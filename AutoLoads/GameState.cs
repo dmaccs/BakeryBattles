@@ -88,6 +88,8 @@ public partial class GameState : Node
             PackedScene EndFightScene = GD.Load<PackedScene>("res://Scenes/BattleTransition.tscn");
             GameScenes.Add(4,(GameScene)EndFightScene.Instantiate());
             GetTree().Root.AddChild((Node2D)GameScenes[4]);
+            ((Node2D)GameScenes[4]).ZIndex = 1;
+
         }
         else
         {

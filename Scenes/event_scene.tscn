@@ -10,6 +10,7 @@ script = ExtResource("1_qph1j")
 eventOptionTexture = ExtResource("2_qe3nb")
 
 [node name="OptionHolder" type="VBoxContainer" parent="."]
+z_index = 2
 offset_left = 336.0
 offset_top = 229.0
 offset_right = 620.0
@@ -47,12 +48,8 @@ text = "Leave!"
 [node name="ClickableSlot4" parent="OptionHolder/Option4" instance=ExtResource("3_uimal")]
 show_behind_parent = true
 
-[node name="EventBackground" type="Sprite2D" parent="."]
-texture = ExtResource("4_wboq1")
-centered = false
-
 [node name="EventText" type="Label" parent="."]
-z_index = 1
+z_index = 2
 offset_left = 336.0
 offset_top = 46.0
 offset_right = 620.0
@@ -61,7 +58,7 @@ text = "Event description"
 autowrap_mode = 3
 
 [node name="EventName" type="Label" parent="."]
-z_index = 1
+z_index = 2
 offset_left = 37.0
 offset_top = 44.0
 offset_right = 330.0
@@ -74,3 +71,7 @@ offset_left = 36.0
 offset_top = 70.0
 offset_right = 331.0
 offset_bottom = 331.0
+
+[node name="TextureRect" type="Sprite2D" parent="."]
+texture = ExtResource("4_wboq1")
+centered = false

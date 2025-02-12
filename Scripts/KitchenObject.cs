@@ -50,6 +50,7 @@ public partial class KitchenObject : Node2D
             return null;
         }
         instance.objectData = ObjectDataStore.GetObjectData(id);
+        instance.ZIndex = 1;
         return instance;
     }
 

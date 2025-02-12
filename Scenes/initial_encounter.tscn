@@ -8,15 +8,17 @@
 script = ExtResource("1_0eiep")
 
 [node name="InitalBackground" type="Sprite2D" parent="."]
-z_index = -1
 texture = ExtResource("2_15ivg")
 centered = false
 
 [node name="ClickableSlot1" parent="." instance=ExtResource("3_blu0o")]
+z_index = 1
 position = Vector2(235, 189)
 
 [node name="ClickableSlot2" parent="." instance=ExtResource("3_blu0o")]
+z_index = 1
 position = Vector2(311, 192)
 
 [node name="ClickableSlot3" parent="." instance=ExtResource("3_blu0o")]
+z_index = 1
 position = Vector2(402, 188)

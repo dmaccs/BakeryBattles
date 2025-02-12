@@ -15,6 +15,7 @@ texture = ExtResource("2_yx4t2")
 centered = false
 
 [node name="FirstPlace" type="Sprite2D" parent="."]
+z_index = 1
 position = Vector2(231, 183)
 texture = ExtResource("4_inci8")
 centered = false

@@ -13,6 +13,7 @@ centered = false
 [node name="Play" type="Button" parent="."]
 unique_name_in_owner = true
 modulate = Color(0, 0, 0, 1)
+z_index = 1
 offset_left = 188.0
 offset_top = 290.0
 offset_right = 275.0
@@ -22,6 +23,7 @@ text = "Play"
 [node name="Settings" type="Button" parent="."]
 unique_name_in_owner = true
 modulate = Color(0, 0, 0, 1)
+z_index = 1
 offset_left = 365.0
 offset_top = 290.0
 offset_right = 451.0

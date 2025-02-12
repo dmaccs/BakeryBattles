@@ -22,6 +22,7 @@ public static void setEnemy(Enemy enemy, int EnemyID){ //TODO: Put functionality
         default:
             break;
     }
+    enemy.ResetValues();
     GD.Print("Set up enemy with " + enemy.hungerRate + " hunger rate and " + enemy.maxFullness + " max fullness");
 
 }

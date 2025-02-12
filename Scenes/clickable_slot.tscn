@@ -6,8 +6,10 @@
 script = ExtResource("1_2oewn")
 
 [node name="TextureRect" type="TextureRect" parent="."]
+metadata/_edit_use_anchors_ = true
 
 [node name="TextureButton" type="TextureButton" parent="."]
+metadata/_edit_use_anchors_ = true
 
 [connection signal="gui_input" from="TextureRect" to="." method="OnSlotPressed"]
 [connection signal="pressed" from="TextureButton" to="." method="OnSlotButtonPressed"]

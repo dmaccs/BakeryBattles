@@ -20,7 +20,8 @@ public partial class BattleTransition : Node2D, GameScene
     }
 
     private void ContinuePressed(){
-        Hide();
         GameState.Instance.FinishedEncounter();
+        Hide();
+        GameState.Instance.kitchenStations.Hide();
     }
 }
