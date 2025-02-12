@@ -114,7 +114,7 @@ public partial class KitchenObject : Node2D
     {
         GD.Print(WarCry);
         objectData.Use();
-        Customer.Eat(3);
+        //Customer.Eat(3);
     }
 
     public void StopFight()

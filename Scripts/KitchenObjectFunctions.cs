@@ -32,6 +32,7 @@ namespace FoodFight
         : base(id, itemName, width, texture, itemType, description) { }
         public override void Use()
         {
+            GD.Print("Using the toaster to toast something.");
             GameState.Instance.Customer.Eat(2);
         }
     }

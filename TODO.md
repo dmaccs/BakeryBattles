@@ -1,4 +1,4 @@
-Make the fight timer a global timer, this timer will run at a short time frame (maybe like 10x per seconds), and then kitchen objects and other time based objects will subscribe to the timer, including the enemy, they will then have their effect functions called at that time and can do things like count to 3 and then reset to 0 each time they hit 3 they do their action to simulate them having a .3 running timer, doing this will allow to use floats like 15% speed increase where if I have an object that counts to 10, I make it count to 8.5 and keep the remainer. 
+Standardize Z sorting so UI elements are always on top, and game pieces are ordered correctly as well
 Make enemies have some kind of generic class to abstract from that contains their details. It might make sense to make ability classes and then simply have the enemies have a health, damage, list of abilities with the associated ability level as well as unique abliities in a class.
 Create bosses, could be the same as an enemy as well, just could make a unique scene for special effects durnig the boss fight.
 Make shops spawn things randomly (need to generate more spawnables first)

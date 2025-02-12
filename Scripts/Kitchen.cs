@@ -6,7 +6,7 @@ public partial class Kitchen : Node2D, GameScene // TODO: MAKE THIS A FOOD TRUCK
 {
 
     Button startButton;
-    public KitchenStations PlayerStation;
+    //public KitchenStations PlayerStation;
     Enemy Opponent;
 
     int fightNumber = 1;
@@ -14,7 +14,7 @@ public partial class Kitchen : Node2D, GameScene // TODO: MAKE THIS A FOOD TRUCK
     public override void _Ready()
     {
         startButton = GetNode<Button>("Button");
-        PlayerStation = GetNode<KitchenStations>("KitchenStations1");
+        //PlayerStation = GetNode<KitchenStations>("KitchenStations1");
     }
 
     public void _on_button_pressed()
@@ -34,7 +34,7 @@ public partial class Kitchen : Node2D, GameScene // TODO: MAKE THIS A FOOD TRUCK
 
     public void ResetKitchen(){
         for(int i = 0; i < 10; i++){
-            PlayerStation.slots[i].RemoveBakingObject();
+            //PlayerStation.slots[i].RemoveBakingObject();
         }
     }
 }

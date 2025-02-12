@@ -2,7 +2,7 @@ using Godot;
 using System.Collections.Generic;
 
 namespace FoodFight;
-public partial class KitchenStations : Node2D
+public partial class KitchenStations : Node2D, GameScene
 {
 
 public List<Slot> slots = new(10);
@@ -90,4 +90,18 @@ public List<Slot> slots = new(10);
         }
     }
 
+    public void SetUp()
+    {
+        
+        //throw new System.NotImplementedException();
+    }
+
+    public void ActivateEffects(){
+        for(int i = 0; i<slots.Count; i++){
+            if(slots[i].spaceUsed){
+                slots[i].bakingObject.DoFunction();
+                i+=slots[i].bakingObject.objectData.Width - 1;
+            }
+        }
+    }
 }

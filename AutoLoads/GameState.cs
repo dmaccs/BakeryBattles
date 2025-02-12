@@ -10,7 +10,7 @@ public partial class GameState : Node
     private Texture2D emptyHeartTexture;
 
     private Texture2D fullHeartTexture;
-    Kitchen PlayerKitchen;
+    public KitchenStations kitchenStations;
     public Enemy Customer;
 
     public static GameState Instance { get; private set; }
@@ -63,15 +63,17 @@ public partial class GameState : Node
         if (!didWin)
         {
             LoseLife();
-            ((Node2D)GameScenes[4]).GetNode<RichTextLabel>("Control/Container/Rewards").Visible = false;
+            ((Node2D)GameScenes[4]).GetNode<RichTextLabel>("Control/Container/Rewards").Visible = false; //TODO: these scenes don't exist in new encounter
             GD.Print("Lost Fight");
+            ((Encounter)GameScenes[8]).StopFight();
         }
         else
         {
             coins += 30;
             UI.UpdateCoins();
             GD.Print("Won Fight");
-            ((Node2D)GameScenes[4]).GetNode<RichTextLabel>("Control/Container/Rewards").Visible = true;
+            ((Node2D)GameScenes[4]).GetNode<RichTextLabel>("Control/Container/Rewards").Visible = true; //TODO: these scenes don't exist in new encounter
+            ((Encounter)GameScenes[8]).StopFight();
         }
         if (Health <= 0)
         {
@@ -131,10 +133,10 @@ public partial class GameState : Node
         UI.Visible = true;
         UI.StartRun();
         LoadEncounter(0);
-        if(!GameScenes.ContainsKey(5)){
-            GameScenes.Add(5, (GameScene)InstantiateScene(5));
-            Node2D kitchen = (Node2D)GameScenes[5];
-            kitchen.Hide();
+        if(!GameScenes.ContainsKey(9)){
+            GameScenes.Add(9, (GameScene)InstantiateScene(9));
+            kitchenStations = (KitchenStations)GameScenes[9];
+            kitchenStations.Hide();
         }
     }
 
@@ -174,11 +176,11 @@ public partial class GameState : Node
 
     public void AddObject(int objectID)
     {
-        if(PlayerKitchen == null){
-            PlayerKitchen = (Kitchen)GameScenes[5];
+        if(kitchenStations == null){
+            kitchenStations = (KitchenStations)GameScenes[9];
         }
         KitchenObject firstObject = KitchenObject.CreateInstance(objectID);
-        PlayerKitchen.PlayerStation.AddObject(firstObject);
+        kitchenStations.AddObject(firstObject);
     }
 
     public void ChangeCoins(int changeAmount){
@@ -214,10 +216,10 @@ public partial class GameState : Node
 
     public void ResetGame()
     {
-        if(PlayerKitchen != null){
-            GD.Print("Resetting game!");
-            PlayerKitchen.ResetKitchen();
-        }
+        // if(PlayerKitchen != null){
+        //     GD.Print("Resetting game!");
+        //     PlayerKitchen.ResetKitchen();
+        // }
         coins = 0;
         UI.UpdateCoins();
         ResetLife();

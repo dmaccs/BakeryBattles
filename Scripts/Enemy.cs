@@ -7,7 +7,8 @@ public partial class Enemy : Node2D
 {
     public int hungerRate = 20;
     public int maxFullness = 100;
-    TextureProgressBar fullness;
+    public TextureProgressBar fullness;
+    double actualFullness = 0;
     bool IsFighting = false;
 
     List<EnemyAbility> Abilities = new List<EnemyAbility>();
@@ -19,38 +20,49 @@ public partial class Enemy : Node2D
 
     public Enemy(int enemyID){
         Enemies.setEnemy(this,enemyID);
+        fullness.MaxValue = maxFullness;
+        actualFullness = fullness.Value;
     }
     public Enemy(){
 
     }
 
     private void GetHungry(){
-        fullness.Value -= hungerRate;
-        if(fullness.Value <= 0){
-            GameState.Instance.FightOver(false); // lose fight because became fully hungry
-        }
+        fullness.Value -= hungerRate/10;
+        actualFullness -= hungerRate/10;
     }
 
     public void Eat(int satiation){
         fullness.Value += satiation;
-        if(IsFighting && fullness.Value == fullness.MaxValue){
-            IsFighting = false;
-            GameState.Instance.FightOver(true); //win fight because satiated the hunger
-        }
-    }
-
-    public void StopFight(){
-        IsFighting = false;
+        actualFullness += satiation;
     }
 
     public void HideNode(){
         Visible = false;
     }
 
-    public void SetUpFight(int fightNumber){
-        GD.Print("Setting up fight" + fightNumber);
-        fullness.MaxValue = 100;
-        fullness.Value = 30;
+    public void ActivateEffects(){
+        GetHungry();
+    }
+
+    public void CheckResults(){ //TODO: Pool all of the abilites into a single class so instead of directly affecting the enemy and calling Eat over and over we calculate 
+                                // The total change in the health bar as well as change in statuses so we only need to do one change to the enemy and then check results
+        if(IsFighting && actualFullness >= fullness.MaxValue){
+            fullness.Value = fullness.MaxValue;
+            IsFighting = false;
+            GameState.Instance.FightOver(true); //win fight because satiated the hunger
+        } else if(fullness.Value <= 0){
+            IsFighting = false;
+            GameState.Instance.FightOver(false); // lose fight because became fully hungry
+        }
+        if(!IsFighting){
+            GD.Print("Stopped fighting");
+        }
+    }
+
+    public void StartFight(){
+        IsFighting = true;
+        actualFullness = fullness.Value;
     }
     
 }

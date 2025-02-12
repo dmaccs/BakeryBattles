@@ -17,7 +17,14 @@ public partial class GlobalTimer : Node
         gameTimer.OneShot = false;
         gameTimer.WaitTime = 0.1f;
         gameTimer.Timeout += () => EmitSignal(nameof(TimerTick));
+    }
+
+    public void StartTicking(){
         gameTimer.Start();
+    }
+
+    public void StopTicking(){
+        gameTimer.Stop();
     }
 
 }
