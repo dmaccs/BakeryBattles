@@ -41,8 +41,9 @@ public partial class EventScene : Node2D, GameScene
         GD.Print("Setting up event but really doing nothing yet");
         Show();
         //TODO: Determine event based on given probabilities and put event data into the relevant places
-        int NextStop = GameState.Instance.RandomNumberGenerator.Next(0,19);
-        LoadEvent(2);
+        int NextStop = GameState.Instance.RandomNumberGenerator.Next(1,6);
+        GD.Print("Next stop ID: " + NextStop);
+        LoadEvent(NextStop);
     }
 
     public void HandleSelection(int optionNumber){

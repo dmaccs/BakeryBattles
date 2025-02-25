@@ -1,9 +1,9 @@
 EventID,Name,Description,Option1,Result1,Option2,Result2,Option3,Result3,Option4,Result4
-1,Suspicious Figure,"You notice across a suspicious figure peaking out between trees in the forest, as you apporach it quickly dissapears behind a tree",Approach the tree,2,Drive past,3,Start cooking,0,,
-2,test,"test descriptionsdf,ser.wepj2!!",test op1,1,test op2,2,test op3,3,test op 4,0
-3,,,,,,,,,,
-4,,,,,,,,,,
-5,,,,,,,,,,
+1,Suspicious Figure,"You notice across a suspicious figure peaking out between trees in the forest, it disapears as you near closer.",Approach the tree,3,Drive past,0,Start cooking,4,,
+2,Vending Machine,A vending machine! The glass is cracked so you cant see inside but the coin slot seems to be lit…,Put X coins in,5,Leave,0,,,,
+3,Magical Pond,"You happen  upon a glowing pond on the side of the road, it seems to be charged with some kind of energy…",Put an appliance in?,6,Leave,0,,,,
+4,Car Wash,you spot a cave with a neon carwash sign visible from the outside,Get the bronze,7,Get the silver,8,Get the gold ,9,Wash the car yourself,10
+5,Steep Hill,You have to go up a steep hill but your cargo is too heavy,Get rid of appliance 1,11,Get rid of Appliance 2,12,Pedal to the metal!,13,,
 6,,,,,,,,,,
 7,,,,,,,,,,
 8,,,,,,,,,,
